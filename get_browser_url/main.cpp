@@ -26,6 +26,13 @@ std::wstring get_opened_firefox_url()
 	HWND hwnd = NULL;
 	while (true)
 	{
+		/*
+		MozillaWindowClass is the ClassName of the Window, change this to make it work for other browsers than Firefox
+		Mozilla Firefox: "MozillaWindowClass"
+		Google Chrome: "Chrome_WidgetWin_1"
+		Internet Explorer: "IEFrame"
+		Microsoft Edge: "ApplicationFrameWindow"
+		*/
 		hwnd = FindWindowEx(NULL, hwnd, "MozillaWindowClass", NULL);
 
 		if (!hwnd)
